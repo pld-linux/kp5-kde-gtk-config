@@ -14,12 +14,19 @@ BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
 BuildRequires:	kf5-karchive-devel
+BuildRequires:	kf5-kauth-devel
+BuildRequires:	kf5-kbookmarks-devel
 BuildRequires:	kf5-kcmutils-devel
+BuildRequires:	kf5-kcmutils-devel
+BuildRequires:	kf5-kconfigwidgets-devel
 BuildRequires:	kf5-kconfigwidgets-devel
 BuildRequires:	kf5-ki18n-devel
 BuildRequires:	kf5-kiconthemes-devel
 BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kio-devel
 BuildRequires:	kf5-knewstuff-devel
+BuildRequires:	kf5-knewstuff-devel
+BuildRequires:	kf5-kxmlgui-devel
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
