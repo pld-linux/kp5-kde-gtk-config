@@ -9,6 +9,7 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	31f6c449cd683937a4cc5ba2447bbf0d
+Patch0:		x32.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -38,6 +39,7 @@ GTK2 and GTK3 Configurator for KDE.
 
 %prep
 %setup -q -n %{kpname}-%{version}
+%patch0 -p1
 
 %build
 install -d build
