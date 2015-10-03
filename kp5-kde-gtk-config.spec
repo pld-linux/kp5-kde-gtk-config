@@ -4,7 +4,7 @@
 Summary:	GTK2 and GTK3 Configurator for KDE
 Name:		kp5-%{kpname}
 Version:	5.4.0
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -64,6 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/cgctheme.knsrc
 %{_iconsdir}/hicolor/*/apps/kde-gtk-config.png
 %{_iconsdir}/hicolor/scalable/apps/kde-gtk-config.svgz
+%dir %{_datadir}/kcm-gtk-module
 %{_datadir}/kcm-gtk-module/preview.ui
 %{_datadir}/kservices5/kde-gtk-config.desktop
 
