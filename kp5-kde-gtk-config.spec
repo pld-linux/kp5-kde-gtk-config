@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.5.4
+%define		kdeplasmaver	5.11.2
 %define		qtver		5.3.2
 %define		kpname		kde-gtk-config
 Summary:	GTK2 and GTK3 Configurator for KDE
 Name:		kp5-%{kpname}
-Version:	5.5.4
+Version:	5.11.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	6a3a8e2dc4c19205802d3cee52f21abc
+# Source0-md5:	39bc7e719a90885162d473440540880e
 Patch0:		x32.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kdegtkconfig.so
 %attr(755,root,root) %{_libdir}/reload_gtk_apps
 /etc/xdg/cgcgtk3.knsrc
-/etc/xdg/cgcicon.knsrc
+#/etc/xdg/cgcicon.knsrc
 /etc/xdg/cgctheme.knsrc
 %{_iconsdir}/hicolor/*/apps/kde-gtk-config.png
 %{_iconsdir}/hicolor/scalable/apps/kde-gtk-config.svgz
