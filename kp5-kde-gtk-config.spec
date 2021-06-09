@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.21.5
+%define		kdeplasmaver	5.22.0
 %define		qtver		5.9.0
 %define		kpname		kde-gtk-config
 Summary:	GTK2 and GTK3 Configurator for KDE
 Name:		kp5-%{kpname}
-Version:	5.21.5
+Version:	5.22.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	257f7ea856dd02bebd460bddfa75e170
+# Source0-md5:	c4d04ac3f83160fdfdb01aaca7630c34
 Patch0:		x32.patch
 %define		specflags	-I/usr/include/harfbuzz
 URL:		http://www.kde.org/
@@ -74,3 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gtk-3.0/modules/libwindow-decorations-gtk-module.so
 %attr(755,root,root) %{_datadir}/kconf_update/remove_window_decorations_from_gtk_css.sh
 %{_datadir}/themes/Breeze/window_decorations.css
+%{_datadir}/kcm-gtk-module/preview.ui
