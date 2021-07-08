@@ -74,4 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gtk-3.0/modules/libwindow-decorations-gtk-module.so
 %attr(755,root,root) %{_datadir}/kconf_update/remove_window_decorations_from_gtk_css.sh
 %{_datadir}/themes/Breeze/window_decorations.css
+%dir %{_datadir}/kcm-gtk-module
 %{_datadir}/kcm-gtk-module/preview.ui
