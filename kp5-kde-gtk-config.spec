@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.23.0
+%define		kdeplasmaver	5.23.1
 %define		qtver		5.9.0
 %define		kpname		kde-gtk-config
 Summary:	GTK2 and GTK3 Configurator for KDE
 Name:		kp5-%{kpname}
-Version:	5.23.0
+Version:	5.23.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	13de87a62abae8ab09988bd126cc035e
+# Source0-md5:	d54ace01649986a2a730283ce28ae5ee
 Patch0:		x32.patch
 %define		specflags	-I/usr/include/harfbuzz
 URL:		http://www.kde.org/
