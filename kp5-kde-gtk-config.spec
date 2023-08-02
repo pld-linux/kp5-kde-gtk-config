@@ -1,22 +1,22 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.27.6
+%define		kdeplasmaver	5.27.7
 %define		qtver		5.15.2
 %define		kpname		kde-gtk-config
 Summary:	GTK2 and GTK3 Configurator for KDE
 Name:		kp5-%{kpname}
-Version:	5.27.6
+Version:	5.27.7
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	fc06d5113fb2cad6510bc22587afc6c8
+# Source0-md5:	77731f7530552c096785e938554c5c0e
 Patch0:		x32.patch
 %define		specflags	-I/usr/include/harfbuzz
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.16.0
 BuildRequires:	gsettings-desktop-schemas
 BuildRequires:	gsettings-desktop-schemas-devel
 BuildRequires:	gtk+2-devel
@@ -52,14 +52,12 @@ GTK2 and GTK3 Configurator for KDE.
 #%%patch0 -p1
 
 %build
-install -d build
-cd build
-%cmake -G Ninja \
+%cmake -B build \
+	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	-DHTML_INSTALL_DIR=%{_kdedocdir} \
-	..
-%ninja_build
+	-DHTML_INSTALL_DIR=%{_kdedocdir}
+%ninja_build -C build
 
 %if %{with tests}
 ctest
