@@ -1,44 +1,44 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.93.0
+%define		kdeplasmaver	5.27.10
 %define		qtver		5.15.2
 %define		kpname		kde-gtk-config
 Summary:	GTK2 and GTK3 Configurator for KDE
 Name:		kp5-%{kpname}
-Version:	5.93.0
-Release:	0.1
+Version:	5.27.10
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	631ef2e6e335518998b4565e7e8b4c76
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	490bd81c915f332b65631b87b6eaa49d
 Patch0:		x32.patch
 %define		specflags	-I/usr/include/harfbuzz
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	gsettings-desktop-schemas
 BuildRequires:	gsettings-desktop-schemas-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	gtk+3-devel
-BuildRequires:	kf6-extra-cmake-modules >= 1.4.0
-BuildRequires:	kf6-karchive-devel
-BuildRequires:	kf6-kauth-devel
-BuildRequires:	kf6-kbookmarks-devel
-BuildRequires:	kf6-kcmutils-devel
-BuildRequires:	kf6-kcmutils-devel
-BuildRequires:	kf6-kconfigwidgets-devel
-BuildRequires:	kf6-kconfigwidgets-devel
-BuildRequires:	kf6-ki18n-devel
-BuildRequires:	kf6-kiconthemes-devel
-BuildRequires:	kf6-kio-devel
-BuildRequires:	kf6-kio-devel
-BuildRequires:	kf6-knewstuff-devel
-BuildRequires:	kf6-knewstuff-devel
-BuildRequires:	kf6-kxmlgui-devel
+BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf5-karchive-devel
+BuildRequires:	kf5-kauth-devel
+BuildRequires:	kf5-kbookmarks-devel
+BuildRequires:	kf5-kcmutils-devel
+BuildRequires:	kf5-kcmutils-devel
+BuildRequires:	kf5-kconfigwidgets-devel
+BuildRequires:	kf5-kconfigwidgets-devel
+BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-kiconthemes-devel
+BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-knewstuff-devel
+BuildRequires:	kf5-knewstuff-devel
+BuildRequires:	kf5-kxmlgui-devel
 BuildRequires:	kp5-kdecoration-devel >= 5.23.0
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_prefix}/libexec/gtk3_preview
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/gtkconfig.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/gtkconfig.so
 %attr(755,root,root) %{_libdir}/kconf_update_bin/gtk_theme
 %{_datadir}/kconf_update/gtkconfig.upd
 %attr(755,root,root) %{_libdir}/gtk-3.0/modules/libcolorreload-gtk-module.so
